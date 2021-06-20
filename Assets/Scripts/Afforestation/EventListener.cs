@@ -40,11 +40,22 @@ public class EventListener : MonoBehaviour
     private void grow()
     {
         this.passedTime += Time.deltaTime;
+
+        if (passedTime < 10.0f)
+        {
+            Tree.transform.localScale = Vector3.Lerp(new Vector3(2.0f, 2.0f, 2.0f), new Vector3(1.0f, 1.0f, 1.0f), 1 / this.passedTime);
+            //Debug.Log(passedTime);
+        }
+    }
+
+    /*private void grow()
+    {
+        this.passedTime += Time.deltaTime;
         //Tree.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
         while (Tree.transform.localScale.x < 0.8)
         {
             Tree.transform.localScale = beginningScale * Time.deltaTime;
         }
-    }
+    }*/
 }
 
