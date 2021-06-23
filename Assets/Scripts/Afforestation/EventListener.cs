@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class EventListener : MonoBehaviour
 {
-    public GameObject Tree;
+    public GameObject[] Tree;
 
     private bool growing = false;
     
     private float passedTime = 0f;
 
     private Vector3 beginningScale = new Vector3(0.1f, 0.1f, 0.1f);
+
+    private int counter = 0;
 
     void Start()
     {
@@ -40,11 +42,16 @@ public class EventListener : MonoBehaviour
     private void grow()
     {
         this.passedTime += Time.deltaTime;
-
-        if (passedTime < 10.0f)
+        if (counter < Tree.Length)
         {
-            Tree.transform.localScale = Vector3.Lerp(new Vector3(2.0f, 2.0f, 2.0f), new Vector3(1.0f, 1.0f, 1.0f), 1 / this.passedTime);
-            //Debug.Log(passedTime);
+           // this.passedTime += Time.deltaTime;
+
+            if (passedTime < 10.0f)
+            {
+                Tree[counter].transform.localScale = Vector3.Lerp(new Vector3(0.2f, 0.2f, 0.2f), new Vector3(0.1f, 0.1f, 0.1f), 1 / this.passedTime);
+                //Debug.Log(passedTime);
+                counter++;
+            }
         }
     }
 
