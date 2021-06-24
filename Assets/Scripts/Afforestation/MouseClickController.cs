@@ -23,7 +23,8 @@ public class MouseClickController : MonoBehaviour
                 if (Physics.Raycast(ray, out hit))
                 {
                     this.mouseProxy[counter].transform.position = earthPosition[counter]; ;//hit.transform.position;
-                    Debug.Log(hit.transform.position);
+                    //Debug.Log(hit.transform.position);
+                    Debug.Log("earthpos: " + earthPosition[counter]);
                     counter++;
                 }
                 else

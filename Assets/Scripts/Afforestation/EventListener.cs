@@ -12,7 +12,7 @@ public class EventListener : MonoBehaviour
 
     private Vector3 beginningScale = new Vector3(0.1f, 0.1f, 0.1f);
 
-    private int counter = 0;
+    private int counter = -1;
 
     void Start()
     {
@@ -33,8 +33,11 @@ public class EventListener : MonoBehaviour
     {
         if (type == "grow")
         {
-            this.growing = !this.growing;
+            this.growing = true;
             this.passedTime = 0.0f;
+            // counter hier hochzählen lassen, nicht in grow()
+            counter++;
+            Debug.Log("counter: " + this.counter);
         }
 
     }
@@ -42,17 +45,20 @@ public class EventListener : MonoBehaviour
     private void grow()
     {
         this.passedTime += Time.deltaTime;
-        if (counter < Tree.Length)
+        if (this.counter < Tree.Length)
         {
-           // this.passedTime += Time.deltaTime;
-
-            if (passedTime < 10.0f)
+           if (this.passedTime < 10.0f)
             {
-                Tree[counter].transform.localScale = Vector3.Lerp(new Vector3(0.2f, 0.2f, 0.2f), new Vector3(0.1f, 0.1f, 0.1f), 1 / this.passedTime);
-                //Debug.Log(passedTime);
-                counter++;
+                Tree[counter].transform.localScale = Vector3.Lerp(new Vector3(0.25f, 0.25f, 0.25f),
+                                                                  beginningScale, // oder: Tree[counter].transform.localScale ??
+                                                                  1 / this.passedTime);
+                //Debug.Log("counter: " + this.counter);
+                Debug.Log("scale " + this.counter + ": " + Tree[this.counter].transform.localScale);
+                //counter++;
+                
             }
         }
+        
     }
 
     /*private void grow()
