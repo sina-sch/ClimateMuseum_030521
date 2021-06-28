@@ -18,19 +18,19 @@ public class MouseClickController : MonoBehaviour
             if //(Input.GetMouseButtonUp(0) &&
                (Input.GetKeyUp("space"))
             {
-                RaycastHit hit;
+               /* RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out hit))
-                {
+                {*/
                     this.mouseProxy[counter].transform.position = earthPosition[counter]; ;//hit.transform.position;
                     //Debug.Log(hit.transform.position);
                     Debug.Log("earthpos: " + earthPosition[counter]);
                     counter++;
-                }
+               /* }
                 else
                 {
                     this.mouseProxy[counter].transform.position = new Vector3(6.432689f, -1.215f, 5.361656f);
-                }
+                }*/
             }
             Debug.Log("mouseclick");
         }
