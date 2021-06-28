@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EventListener : MonoBehaviour
 {
-    public GameObject[] Tree;
+    //public GameObject[] Tree;
 
     private bool growing = false;
     
@@ -23,7 +23,7 @@ public class EventListener : MonoBehaviour
     {
         if (this.growing)
         {
-            this.grow();
+            Tree.grow();
         }
         Debug.Log("eventlistener");
       
@@ -42,24 +42,31 @@ public class EventListener : MonoBehaviour
 
     }
 
-    private void grow()
+   /* private void grow()
     {
-        this.passedTime += Time.deltaTime;
+       /* this.passedTime += Time.deltaTime;
         if (this.counter < Tree.Length)
         {
-           if (this.passedTime < 10.0f)
+            if (this.passedTime < 10.0f)
             {
-                Tree[counter].transform.localScale = Vector3.Lerp(new Vector3(0.25f, 0.25f, 0.25f),
-                                                                  beginningScale, // oder: Tree[counter].transform.localScale ??
-                                                                  1 / this.passedTime);
+
+                //for (int i = 0; i <= counter;  i++)
+                //{
+
+                Tree[counter].transform.localScale = Vector3.Lerp(new Vector3(0.2f, 0.2f, 0.2f),
+                                                            beginningScale, // oder:
+                                                                            // Tree[i].transform.localScale,
+                                                            1 / this.passedTime);
                 //Debug.Log("counter: " + this.counter);
                 Debug.Log("scale " + this.counter + ": " + Tree[this.counter].transform.localScale);
                 //counter++;
-                
+
+                //}
+
+
             }
         }
-        
-    }
+    }*/
 
     /*private void grow()
     {
