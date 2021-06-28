@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EventListener : MonoBehaviour
 {
-    //public GameObject[] Tree;
+    public GameObject[] Tree;
+    //public Baum tree;
 
     private bool growing = false;
     
@@ -17,13 +18,14 @@ public class EventListener : MonoBehaviour
     void Start()
     {
         EventSystemBase.aCollisionEvent += this.processCollisionEvent;
+        //tree = GameObject.Find("Oak_Tree(1)").GetComponent<Baum>();
     }
 
     void Update()
     {
         if (this.growing)
         {
-            Tree.grow();
+            this.grow();
         }
         Debug.Log("eventlistener");
       
@@ -37,14 +39,15 @@ public class EventListener : MonoBehaviour
             this.passedTime = 0.0f;
             // counter hier hochzählen lassen, nicht in grow()
             counter++;
+
             Debug.Log("counter: " + this.counter);
         }
 
     }
 
-   /* private void grow()
+    private void grow()
     {
-       /* this.passedTime += Time.deltaTime;
+        this.passedTime += Time.deltaTime;
         if (this.counter < Tree.Length)
         {
             if (this.passedTime < 10.0f)
@@ -66,7 +69,7 @@ public class EventListener : MonoBehaviour
 
             }
         }
-    }*/
+    }
 
     /*private void grow()
     {
