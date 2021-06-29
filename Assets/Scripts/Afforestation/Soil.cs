@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Soil : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Baum tree;
+    
+    public void positionswechsel()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        tree.transform.position = this.transform.position;
     }
 }
