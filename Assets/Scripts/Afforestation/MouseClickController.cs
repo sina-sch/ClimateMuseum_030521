@@ -1,34 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class MouseClickController : MonoBehaviour
-{
-    public Soil[] soil;
-   
-    public int counter = 0;
-
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log(counter);
-        if (counter < soil.Length)
-        {
-            if //(Input.GetMouseButtonUp(0))
-               (Input.GetKeyUp("space"))
-            {
-               /* RaycastHit hit;
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out hit) && hit.collider == GetComponent<Soil>())
-                {*/
-                    soil[counter].positionswechsel();
-                    
-                    Debug.Log("earthpos: " + soil[counter].transform.position);
-                    counter++;
-                //}
-            
-            }
-            
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:3ad179a813b1f00bbc493feba4f56b60c46abda80401b22ce88a76347f4b9fb7
+size 1712
